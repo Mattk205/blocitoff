@@ -3,4 +3,19 @@
 <h3>Email: <%= @user.email %></h3>
 <p> Last log in occured on <%= @user.last_sign_in_at %></p>
 <h2> My To-Do Lists </h2>
+<div class="col-md-8">
+  <% @items.each do |item| %>
+    <div class="media">
+      <div class="media-body">
+        <h4 class="media-heading">
+          <%= item.name %>
+        </h4>
+
+      </div>
+    </div>
+  <% end %>
+</div>
+<div class="col-md-4">
+  <%= link_to "New Item", new_user_item_path(@user, @item), class: 'btn btn-success' %>
+</div>
 <div><%= link_to 'Edit profile', edit_user_registration_path, :class => 'link' %></div>
