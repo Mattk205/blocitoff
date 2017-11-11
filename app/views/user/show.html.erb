@@ -1,21 +1,16 @@
-<h1> User Profile</h1>
-<h2>Username: <%= @user.username %></h2>
-<h3>Email: <%= @user.email %></h3>
+<div class="container">
+<div class="row">
+<h1><%= @user.username %> <small><%= link_to 'Edit profile', edit_user_registration_path, :class => 'link' %></small></h1>
 <p> Last log in occured on <%= @user.last_sign_in_at %></p>
-<h2> My To-Do Lists </h2>
-<div class="col-md-8">
+<h2> My To-Do Lists <small> <%= link_to "New Item", new_user_item_path(@user, @item), class: 'btn btn-primary' %></small> </h2>
+<div class="col">
   <% @items.each do |item| %>
-    <div class="media">
-      <div class="media-body">
-        <h4 class="media-heading">
-          <%= item.name %>
-        </h4>
-
-      </div>
-    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+          <span class="badge"> Time left </span><%= item.name %>
+        </li>
+    </ul>
   <% end %>
 </div>
-<div class="col-md-4">
-  <%= link_to "New Item", new_user_item_path(@user, @item), class: 'btn btn-success' %>
 </div>
-<div><%= link_to 'Edit profile', edit_user_registration_path, :class => 'link' %></div>
+</div>

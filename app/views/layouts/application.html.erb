@@ -10,22 +10,34 @@
   </head>
 
   <body>
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <div class="container">
-      <ul class="nav nav-tabs">
-        <li><%= link_to "Home", root_path %></li>
-        <% if user_signed_in? %>
-          Signed in as: <strong><%= current_user.username %></strong> |
-          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-        <% else %>
-          <%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link'  %> -
-          <%= link_to "Sign In", new_user_session_path, :class => 'navbar-link'  %>
-        <% end %>
-      </ul>
-
+    <div class="row">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Blocitoff</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <li><%= link_to "Home", root_path %></li>
+                <% if user_signed_in? %>
+                <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+                <% else %>
+                <li><%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link'  %></li>
+                <li><%= link_to "Sign In", new_user_session_path, :class => 'navbar-link'  %></li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
       <%= yield %>
-    </div>
   </body>
 </html>

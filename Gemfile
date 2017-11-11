@@ -41,3 +41,4 @@ end
 
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
