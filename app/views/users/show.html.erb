@@ -4,13 +4,9 @@
 <p> Last log in occured on <%= @user.last_sign_in_at %></p>
 <h2> My To-Do Lists <small> <%= link_to "New Item", new_user_item_path(@user, @item), class: 'btn btn-primary' %></small> </h2>
 <div class="col">
-  <% @items.each do |item| %>
-    <ul class="list-group">
-        <li class="list-group-item">
-          <span class="badge"> Time left </span><%= item.name %>
-        </li>
-    </ul>
-  <% end %>
+  <ul class="list-group">
+  <%= render partial: 'items/item', collection: @items || "Lets start a To-Do List!"%>
+  </ul>
 </div>
 </div>
 </div>

@@ -5,7 +5,7 @@ users = User.all
 50.times do
 # #1
   item = Item.create!(
-    user:   users.second,
+    user:   users.first,
     name:  Faker::Lorem.sentence,
   )
   item.update_attribute(:created_at, rand(10.minutes .. 1.year).ago)

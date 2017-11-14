@@ -39,6 +39,7 @@ group :development do
   gem 'listen', '~> 3.0.5'
 end
 
+gem 'byebug'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
