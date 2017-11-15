@@ -1,3 +1,3 @@
 <li class="list-group-item">
-  <span class="badge"> Time left </span><%= item.name %><span> <%= link_to "", item, method: :delete, class: 'glyphicon glyphicon-ok' %>
+  <span class="badge"> Time left </span><%= item.name %><span> <%= link_to "", item, remote: true, method: :delete, class: 'glyphicon glyphicon-ok' %>
 </li>
