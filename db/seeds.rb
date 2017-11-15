@@ -8,7 +8,7 @@ users = User.all
     user:   users.first,
     name:  Faker::Lorem.sentence,
   )
-  item.update_attribute(:created_at, rand(10.minutes .. 1.year).ago)
+  item.update_attribute(:created_at, rand(10.minutes .. 8.days).ago)
 end
 items = Item.all
 
