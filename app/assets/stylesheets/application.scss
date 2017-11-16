@@ -1,5 +1,30 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.list-container{
+  background-color: #337ab7;
+  padding: 2em;
+  border: 1px solid black;
+  border-radius: .25em;
+  height: 30%;
+}
+
+.new-item-container{
+  padding: .5em;
+  background-color: #337ab7;
+  border: 1px solid black;
+  border-radius: .25em;
+}
+
+#to-do-list{
+  overflow-y: scroll;
+  height: 40em;
+}
+
+#to-do-item {
+  border-color: black;
+  margin-bottom: 4px;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
